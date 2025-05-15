@@ -127,9 +127,14 @@ class _FilmListPageState extends State<FilmListPage> {
                       ),
                       const SizedBox(height: 12),
                       ElevatedButton.icon(
-                        icon: Icon(_editingFilm == null ? Icons.add : Icons.save),
-                        label: Text(_editingFilm == null ? 'Tambah Film' : 'Simpan Perubahan'),
-                        style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 171, 212, 87)),
+                        icon: Icon(_editingFilm == null ? Icons.add : Icons.save, color: Colors.black),
+                        label: Text(
+                          _editingFilm == null ? 'Tambah Film' : 'Simpan Perubahan',
+                          style: const TextStyle(color: Colors.black),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color.fromARGB(255, 171, 212, 87),
+                        ),
                         onPressed: _submitFilm,
                       ),
                     ],
@@ -174,13 +179,13 @@ class _FilmListPageState extends State<FilmListPage> {
                                     const SizedBox(height: 8),
                                     Row(
                                       children: List.generate(5, (index) {
-                                        return Icon(
-                                          index < film.rating.round()
-                                              ? Icons.star
-                                              : Icons.star_border,
-                                          color: Colors.amber,
-                                          size: 20,
-                                        );
+                                        if (index < film.rating.floor()) {
+                                          return const Icon(Icons.star, color: Colors.amber, size: 20);
+                                        } else if (index < film.rating && (film.rating - film.rating.floor()) >= 0.5 && index == film.rating.floor()) {
+                                          return const Icon(Icons.star_half, color: Colors.amber, size: 20);
+                                        } else {
+                                          return const Icon(Icons.star_border, color: Colors.amber, size: 20);
+                                        }
                                       }),
                                     ),
                                   ],
