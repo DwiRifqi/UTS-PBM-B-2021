@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "349241159109",
+    "project_id": "uts2021pbm",
+    "storage_bucket": "uts2021pbm.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:349241159109:android:7c8f22168bb732d8f6afac",
+        "android_client_info": {
+          "package_name": "com.example.uts_pbm_2021"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBgXa3lv_le6v_EvmOU8_QcfdInBFmDY0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
